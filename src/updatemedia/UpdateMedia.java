@@ -111,28 +111,27 @@ public class UpdateMedia {
                     }else{
                         System.out.println("找不到指定的文件");
                     }
+                    Video video = new Video();
+                    video.setDirname(linesTxt.get(0));
+                    video.setType(linesTxt.get(1));
+                    video.setName(linesTxt.get(2));
+                    video.setDuration(linesTxt.get(3));
+                    video.setDate(this.currentDate);
+                    video.setClicks(0);
+                    video.setDes(linesTxt.get(4));
+                    video.setScale_x(Float.parseFloat(linesTxt.get(5)));
+                    video.setScale_y(Float.parseFloat(linesTxt.get(6)));
+                    video.setDirector(linesTxt.get(7));
+                    video.setActor(linesTxt.get(8));
+                    video.setSinger(linesTxt.get(9));
+                    video.setAlbum(linesTxt.get(10));
+                
+                    this.videoElementList.add(video);
+                    linesTxt.clear();
                 } catch (Exception e) {
                     System.out.println("读取文件内容出错");
                     e.printStackTrace();
                 }
-                
-                Video video = new Video();
-                video.setDirname(linesTxt.get(0));
-                video.setType(linesTxt.get(1));
-                video.setName(linesTxt.get(2));
-                video.setDuration(linesTxt.get(3));
-                video.setDate(this.currentDate);
-                video.setClicks(0);
-                video.setDes(linesTxt.get(4));
-                video.setScale_x(Float.parseFloat(linesTxt.get(5)));
-                video.setScale_y(Float.parseFloat(linesTxt.get(6)));
-                video.setDirector(linesTxt.get(7));
-                video.setActor(linesTxt.get(8));
-                video.setSinger(linesTxt.get(9));
-                video.setAlbum(linesTxt.get(10));
-                
-                this.videoElementList.add(video);
-                linesTxt.clear();
             }
             videoContentsNameList.clear();
         } catch(NumberFormatException e){
@@ -159,23 +158,23 @@ public class UpdateMedia {
                     }else{
                         System.out.println("找不到指定的文件");
                     }
+                    Voice voice = new Voice();
+                    voice.setDirname(linesTxt.get(0));
+                    voice.setType(linesTxt.get(1));
+                    voice.setName(linesTxt.get(2));
+                    voice.setDuration(linesTxt.get(3));
+                    voice.setDate(this.currentDate);
+                    voice.setClicks(0);
+                    voice.setDes(linesTxt.get(4));
+                    voice.setActor(linesTxt.get(5));
+          
+                    this.voiceElementList.add(voice);
+                    linesTxt.clear();
+                    
                 } catch (Exception e) {
                     System.out.println("读取文件内容出错");
                     e.printStackTrace();
-                }
-                
-                Voice voice = new Voice();
-                voice.setDirname(linesTxt.get(0));
-                voice.setType(linesTxt.get(1));
-                voice.setName(linesTxt.get(2));
-                voice.setDuration(linesTxt.get(3));
-                voice.setDate(this.currentDate);
-                voice.setClicks(0);
-                voice.setDes(linesTxt.get(4));
-                voice.setActor(linesTxt.get(5));
-          
-                this.voiceElementList.add(voice);
-                linesTxt.clear();
+                }         
             }
             voiceContentsNameList.clear();
         } catch(NumberFormatException e){
