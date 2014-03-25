@@ -105,7 +105,10 @@ public class UpdateMedia {
                         String lineTxt = null;
                         while((lineTxt = bufferedReader.readLine()) != null){
                             String[] ary = lineTxt.split("=");
-                            linesTxt.add(ary[1]);
+                            if(ary.length == 1)
+                                linesTxt.add("none");
+                            else
+                                linesTxt.add(ary[1]);
                         }
                         read.close();
                     }else{
@@ -152,7 +155,10 @@ public class UpdateMedia {
                         String lineTxt = null;
                         while((lineTxt = bufferedReader.readLine()) != null){
                             String[] ary = lineTxt.split("=");
-                            linesTxt.add(ary[1]);
+                            if(ary.length == 1)
+                                linesTxt.add("none");
+                            else
+                                linesTxt.add(ary[1]);
                         }
                         read.close();
                     }else{
